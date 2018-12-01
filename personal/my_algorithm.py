@@ -12,14 +12,23 @@ features_train, features_test, labels_train, labels_test = preprocess()
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.ensemble import  AdaBoostClassifier
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.naive_bayes import GaussianNB
+from sklearn.svm import SVC
+from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import  accuracy_score
 
 classifiers = [KNeighborsClassifier(),
                AdaBoostClassifier(),
-               RandomForestClassifier()]
+               RandomForestClassifier(),
+               GaussianNB(),
+               SVC(),
+               DecisionTreeClassifier()]
 names = ["KNeighborsClassifier",
          "AdaBoostClassifier",
-         "RandomForestClassifier"]
+         "RandomForestClassifier",
+         "GaussianNB",
+         "SVC",
+         "DecisionTreeClassifier"]
 
 for name, clf in zip(names, classifiers):
 
