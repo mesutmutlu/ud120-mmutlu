@@ -32,7 +32,7 @@ names = ["KNeighborsClassifier",
 
 for name, clf in zip(names, classifiers):
 
-    print name + " started"
+    print name, "started", time()
     clf = clf
     t0 = time()
     clf.fit(features_train, labels_train)
@@ -40,4 +40,4 @@ for name, clf in zip(names, classifiers):
     t0 = time()
     pred = clf.predict(features_test)
     print "prediction time:", round(time()-t0, 3), "s"
-    print "accuracy is" + str(accuracy_score(labels_test, pred))
+    print "accuracy:", str(accuracy_score(labels_test, pred))
