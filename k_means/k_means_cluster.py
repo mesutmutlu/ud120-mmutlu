@@ -11,7 +11,7 @@ import pickle
 import numpy
 import matplotlib.pyplot as plt
 import sys
-sys.path.append("../tools/")
+sys.path.append("C:\\Users\\dtmemutlu\\PycharmProjects\\ud120-projects\\tools")
 from feature_format import featureFormat, targetFeatureSplit
 
 
