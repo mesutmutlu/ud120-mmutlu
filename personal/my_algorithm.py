@@ -40,4 +40,4 @@ for name, clf in zip(names, classifiers):
     t0 = time()
     pred = clf.predict(features_test)
     print "prediction time:", round(time()-t0, 3), "s"
-    print "accuracy:", str(accuracy_score(labels_test, pred))
+    print "accuracy: ", str(accuracy_score(labels_test, pred))
