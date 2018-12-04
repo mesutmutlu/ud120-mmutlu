@@ -42,6 +42,8 @@ print max(enron_data["FASTOW ANDREW S"]["total_payments"],enron_data["SKILLING J
 j=0
 k=0
 m=0
+n=0
+h=0
 for name, features in enron_data.items():
     if enron_data[name]["salary"] == "NaN":
         j= j+1
@@ -52,16 +54,25 @@ for name, features in enron_data.items():
     if enron_data[name]["total_payments"] == "NaN":
         m=m+1
 
+    if enron_data[name]["poi"] == True:
+        n=n+1
+
+    if enron_data[name]["poi"] == True and enron_data[name]["total_payments"]=="NaN":
+        h = h + 1
+
+
 print "numpy"
-enron_numpy = featureFormat(enron_data, ["salary", "total_payments"])
-print enron_numpy[enron_numpy[:, 1] == "NaN"]
+enron_numpy = featureFormat(enron_data, ["salary"])
+print len(enron_numpy)
 #print enron_data
 
 #print enron_data[""]["email_address"]
 
 print "nan salary number is", j,len(enron_data), j/len(enron_data)
 print "nan email number is", k
-print "no nan total paymetns", m, len(enron_data), m/len(enron_data)
+print "number of total paymetns nan", m, len(enron_data), m/len(enron_data)
+print "numbe rof poi", n
+print "numbe rof poi with total_payments nan", h
 
 print 1/3
 
