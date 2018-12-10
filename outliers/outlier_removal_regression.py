@@ -12,7 +12,7 @@ from outlier_cleaner import outlierCleaner
 ages = pickle.load( open("practice_outliers_ages.pkl", "r") )
 net_worths = pickle.load( open("practice_outliers_net_worths.pkl", "r") )
 
-
+print ages
 
 ### ages and net_worths need to be reshaped into 2D numpy arrays
 ### second argument of reshape command is a tuple of integers: (n_rows, n_columns)
